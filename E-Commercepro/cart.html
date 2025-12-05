@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./cartaa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <section id="header">
+
+    <a href=""><img height="90px" src="./5166615-removebg-preview.png" alt="" ></a>
+
+    <div>
+        <ul type="none" id="navbar">
+            <a href="./home.html"><li>Home</li></a>
+            <a href="./shop.html"><li>Shop</li></a>
+            <a href="./blog.html"><li>Blog</li></a>
+            <a href="./indexa.html"><li>About</li></a>
+            <a href="./contact.html"><li>Contact</li></a>
+            <a href="./cart.html"><li><i class='fa-solid fa-cart-shopping'></i></li></a>
+        </ul>
+
+    </div>
+
+   </section>
+
+   
+
+
+<div class="container">
+<h1>Shopping Cart</h1>
+
+<section id="cart">
+    <table>
+        <thead>
+            <tr>
+                <th>Remove</th>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody id="cart-body">
+            <!-- Dynamic rows go here -->
+        </tbody>
+    </table>
+</section>
+
+<section id="cart-add">
+    <div id="subtotal">
+        <h3>Cart Totals</h3>
+        <table>
+            <tr>
+                <td>Cart Subtotal</td>
+                <td id="cart-subtotal">$0.00</td>
+            </tr>
+            <tr>
+                <td>Shipping</td>
+                <td>Free</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td id="cart-total">$0.00</td>
+            </tr>
+        </table>
+        <button onclick="alert('Proceed to checkout')">Proceed to Checkout</button>
+    </div>
+</section>
+
+</div>
+
+
+
+
+
+<footer id="footer">
+   
+   
+
+    <!-- Footer Main Columns -->
+    <div class="footer-main">
+        <div class="col">
+            <img src="./5166615-removebg-preview.png" alt="" height="100px">
+            <h3>Content</h3>
+            <p><strong>Address:</strong> #248 Betbalkunda, Basavakalyan-585327</p>
+            <p><strong>Phone:</strong> (91+) 7892532949 / 9880086320</p>
+            <p><strong>Hours:</strong> 10.00 - 18.00, Mon - Sat</p>
+
+            <div class="follow">
+                <h4>Follow us on</h4>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col1">
+            <h3>About</h3>
+            <a href="">About us</a>
+            <a href="">Delivery Information</a>
+            <a href="">Privacy Policy</a>
+            <a href="">Terms & Conditions</a>
+            <a href="">Contact us</a>
+        </div>
+
+        <div class="col1">
+            <h3>My Account</h3>
+            <a href="">Sign-in</a>
+            <a href="">View Cart</a>
+            <a href="">My Wishlist</a>
+            <a href="">Track My Order</a>
+            <a href="">Help</a>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        &copy; 2025 ShopIt | Designed by Nagesh
+    </div>
+</footer>
+    
+     
+
+
+
+
+<script>
+
+// let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// // Display cart
+// function displayCart() {
+//     let tbody = document.getElementById("cart-body");
+//     tbody.innerHTML = ""; // clear old rows
+
+//     cart.forEach((item, index) => {
+//         let subtotal = item.price * item.quantity;
+//         let row = `
+//             <tr>
+//                 <td><a href="#" onclick="removeItem(${index})" title="Remove Item"><i class='fas fa-times'></i></a></td>
+//                 <td><img src="${item.image}" alt="${item.name}"></td>
+//                 <td>${item.name}</td>
+//                 <td>$${item.price.toFixed(2)}</td>
+//                 <td><input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)"></td>
+//                 <td>$${subtotal.toFixed(2)}</td>
+//             </tr>
+//         `;
+//         tbody.innerHTML += row;
+//     });
+
+//     updateTotal();
+// }
+
+// // Update quantity
+// function updateQuantity(index, newQty) {
+//     cart[index].quantity = parseInt(newQty);
+//     localStorage.setItem("cart", JSON.stringify(cart));
+//     displayCart();
+// }
+
+// // Remove item
+// function removeItem(index) {
+//     cart.splice(index, 1);
+//     localStorage.setItem("cart", JSON.stringify(cart));
+//     displayCart();
+// }
+
+// // Update totals
+// function updateTotal() {
+//     let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+//     document.getElementById("cart-subtotal").innerText = `$${total.toFixed(2)}`;
+//     document.getElementById("cart-total").innerText = `$${total.toFixed(2)}`;
+// }
+
+// // Initial render
+// displayCart();
+
+// // Example function to add item to cart (can be used from product page)
+// function addToCart(name, price, image) {
+//     let existing = cart.find(item => item.name === name);
+//     if (existing) {
+//         existing.quantity += 1;
+//     } else {
+//         cart.push({ name, price, quantity: 1, image });
+//     }
+//     localStorage.setItem("cart", JSON.stringify(cart));
+//     displayCart();
+// }   
+
+
+
+
+
+
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [
+    { name: "Shirt", price: 120, quantity: 1, image: "./HM-Men-2016-Spring-Summer-Look-Book-001-800x1132.jpg" },
+    { name: "Shoes", price: 200, quantity: 2, image: "./cort.jpg" }
+];
+
+function displayCart() {
+    let tbody = document.querySelector("tbody");
+    tbody.innerHTML = "";
+
+    cart.forEach((item, index) => {
+        let subtotal = item.price * item.quantity;
+        let row = `
+            <tr>
+                <td><i class="fa-solid fa-trash" onclick="removeItem(${index})" title="Remove"></i></td>
+                <td><img src="${item.image}" alt="${item.name}" width="60"></td>
+                <td>${item.name}</td>
+                <td>₹${item.price.toFixed(2)}</td>
+                <td><input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)"></td>
+                <td>₹${subtotal.toFixed(2)}</td>
+            </tr>
+        `;
+        tbody.innerHTML += row;
+    });
+
+    updateTotal();
+}
+
+function updateQuantity(index, newQty) {
+    cart[index].quantity = parseInt(newQty);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+}
+
+function updateTotal() {
+    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    document.getElementById("cart-subtotal").innerText = `₹${total.toFixed(2)}`;
+    document.getElementById("cart-total").innerText = `₹${total.toFixed(2)}`;
+}
+
+displayCart();
+
+
+</script>
+
+
+    
+</body>
+</html>
